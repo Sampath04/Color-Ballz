@@ -19,19 +19,19 @@ function Circle(x, y, dx, dy, r){
 		c.strokeStyle = 'rgba(' + colorArray[0] +',' + colorArray[1] + ',' + colorArray[2] +',' + '0.6)';
 		c.fillStyle = 'rgba(' + colorArray[3] +',' + colorArray[4] + ',' + colorArray[5] +',' + '0.3)';
 		c.lineWidth = 3;
-		c.arc(x, y, r, Math.PI *2, false);
+		c.arc(this.x, this.y, this.r, Math.PI *2, false);
 		c.stroke();
 		c.fill();
 	};
 	this.update = function(){
 		this.draw();
-		x += dx;
-		y += dy;
-		if (x > (innerWidth - r)|| x < r){
-			dx = -dx;
+		this.x += this.dx;
+		this.y += this.dy;
+		if (this.x > (innerWidth - this.r)|| this.x < this.r){
+			this.dx = -this.dx;
 		}
-		if (y > (innerHeight - r)|| y < r){
-			dy = -dy;
+		if (this.y > (innerHeight - this.r)|| this.y < this.r){
+			this.dy = -this.dy;
 		}
 	}
 }
